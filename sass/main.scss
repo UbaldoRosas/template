@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+// Sass utilities
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/placeholders";
+@import "helpers/animations";
+
+// Vendors and external stylesheets
+
+// Base stuff
+@import "base/normalize";
+@import "base/typography";
+@import "base/helpers";
+@import "base/basic";
+@import "base/sprites";
+
+// Components and modules
+@import "components/forms";
+@import "components/buttons";
+
+// Layout related stylesheets
+@import "layout/header";
+@import "layout/footer";
+@import "layout/template";
+
+
+// Page-specific stylesheets
+@import "pages/home";
+
+// Responsive
+@import "responsive/tablet";
+@import "responsive/mobile";

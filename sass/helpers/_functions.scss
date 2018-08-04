@@ -1,0 +1,9 @@
+// Devuelve el cálculo del tamaño de un elemento respecto a su contenedor
+@function porcentaje($medida, $total) {
+  @return ($medida / $total) * 100%;
+}
+
+// Obtener números de valores enteros con unidades
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}

@@ -1,0 +1,122 @@
+
+// ==========================================================================
+//    Estilos y configuraciones bases
+// ==========================================================================
+
+html {
+    font-size   : 1em;
+    height      : auto;
+}
+
+// Estilos generales para el body
+body {
+    display                  : block;
+    min-width                : 320px;
+    max-width                : 1920px;
+    height                   : auto;
+    font-family              : $base-font;
+    color                    : $base-color;
+    background-color         : #000;
+    overflow-x               : hidden;
+    overflow-y               : visible;
+    text-rendering           : optimizeLegibility;
+    -webkit-font-smoothing   : antialiased;
+    -moz-osx-font-smoothing  : grayscale;
+}
+
+// Box-zing para todos
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+// Titulos
+h1, h2, h3, h4, h5, h6 {
+    font-weight : normal;
+    margin      : 0;
+    line-height : 1;
+}
+
+// Textos
+p {
+    margin : 0;
+}
+
+// Estilos generales para los links
+a,
+a:active,
+a:visited,
+a:focus {
+    outline         : 0px;
+    text-decoration : none;
+}
+
+// Listas
+ul, ol {
+    margin  : 0;
+    padding : 0;
+}
+
+ul {
+    list-style-type : none;
+}
+
+// Imágenes responsivas
+img {
+    max-width      : 100%;
+    vertical-align : middle;
+    height         : auto
+}
+
+
+// * These selection rule sets have to be separate.
+// * Customize the background color to match your design.
+::-moz-selection {
+    text-shadow : none;
+    background  : #ccc;
+}
+
+::selection {
+    text-shadow : none;
+    background  : #ccc;
+}
+
+// * A better looking default horizontal rule
+hr {
+    display    : block;
+    height     : 0;
+    border     : 0;
+    margin     : 2em 0;
+    padding    : 0;
+}
+
+// * Remove the gap between audio, canvas, iframes,
+// * images, videos and the bottom of their containers:
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+// * Remove default fieldset styles.
+fieldset {
+    border  : 0;
+    margin  : 0;
+    padding : 0;
+}
+
+// * Allow only vertical resizing of textareas.
+textarea {
+    resize  : none;
+    border  : 0;
+    outline : none;
+}
+
+// Inputs, buttons
+input, button, select{
+    outline    : 0px;
+    border     : 0;
+    background : transparent;
+}
