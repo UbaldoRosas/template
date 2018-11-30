@@ -23,11 +23,22 @@ module.exports = function(grunt){
                 src : [
 					'js/vendors/*',
 					'js/lib/*',
-					'js/main.js'
+					'js/babel/scripts.js'
                 ],
 
                 dest : '../js/scripts.all.js'
             },
+		},
+
+		babel: {
+			options: {
+			  	sourceMap: true
+			},
+			dist: {
+				files: {
+					"js/babel/scripts.js": "js/main.js"
+				}
+			}
 		},
 
 		copy : {
@@ -110,7 +121,7 @@ module.exports = function(grunt){
 		watch : {
 			scripts : {
 				files   : ['Gruntfile.js', 'js/**/*.js', 'js/*.js'],
-				tasks   : ['concat'],
+				tasks   : ['babel', 'concat'],
 				options : {
 					spawn : false,
 				}
@@ -143,7 +154,8 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-spritesmith');
 	grunt.loadNpmTasks('grunt-replace');
+	grunt.loadNpmTasks('grunt-babel');
 
-	grunt.registerTask('default', ['sass', 'autoprefixer', 'concat']);
-	grunt.registerTask('build', ['default', 'uglify', 'copy:dist', 'copy:estilos', 'copy:scripts', 'copy:assets']);
+	grunt.registerTask('default', ['sass', 'autoprefixer', 'babel', 'concat']);
+	grunt.registerTask('build', ['default', 'uglify']);
 };
