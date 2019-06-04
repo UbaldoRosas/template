@@ -21,3 +21,24 @@
 	}
 
 }
+
+@mixin vw($size, $tablet-size:false, $mobile-size:false) {
+	font-size: get-vw($size);
+	
+	// Prevent font-size from getting too big
+	@media #{$wide-screen} {
+	  font-size: $size;
+	}
+
+	@if $tablet-size {
+		@media #{$tablet-screen} {
+		  font-size: $tablet-size;
+		}
+	}
+
+	@if $mobile-size {
+		@media #{$mobile-screen} {
+		  font-size: $mobile-size;
+		}
+	}
+}

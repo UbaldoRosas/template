@@ -20,3 +20,12 @@ $menu-gutter : 10px 15px;
 // z-index
 $zi-menu    : 100;
 $zi-loading : 110;
+
+//Media queries
+$max-breakpoint: 1920;
+$tablet-breakpoint: 1024;
+$mobile-breakpoint: 640;
+
+$wide-screen: "(min-width: #{$max-breakpoint}px)"; 
+$tablet-screen: "(max-width: #{$tablet-breakpoint}px)"; 
+$mobile-screen: "(max-width: #{$mobile-breakpoint}px)"; 
