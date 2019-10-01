@@ -2,31 +2,14 @@ module.exports = function(grunt){
 
 	grunt.initConfig({
 
-		jshint : {
-			files : [
-				'js/main.js'
-			]
-		},
-
-		uglify : {
-			js : {
-				files : {
-					'../js/scripts.min.js': [
-						'../js/scripts.all.js',
-					]
-				}
-			}
-		},
-
 		concat : {
-            scripts : {
+            base : {
                 src : [
 					'js/vendors/*',
-					'js/lib/*',
-					'js/babel/scripts.js'
+					'js/main.js'
                 ],
 
-                dest : '../js/scripts.all.js'
+                dest : '../js/base.js'
             },
 		},
 
@@ -38,54 +21,6 @@ module.exports = function(grunt){
 				files: {
 					"js/babel/scripts.js": "js/main.js"
 				}
-			}
-		},
-
-		copy : {
-			dist : {
-				expand  : true,
-				flatten : false,
-				cwd     : '../',
-				src     : [
-					'*.html',
-					'application/**/*',
-					'*.php',
-					'system/**/*',
-					'*.json',
-					'**/**/.htaccess',
-					'*.htaccess'
-				],
-				dest : '../dist/',
-			},
-
-			estilos: {
-				expand  : true,
-				flatten : false,
-				cwd     : '../',
-				src     : [
-					'css/*',
-					'application/views/templates/header.php',
-				],
-				dest : '../dist/'
-			},
-
-			scripts: {
-				expand  : true,
-				flatten : false,
-				cwd     : '../',
-				src     : [
-					'js/*',
-					'application/views/templates/footer.php',
-				],
-				dest : '../dist/',
-			},
-
-			assets : {
-				expand  : true,
-				flatten : false,
-				cwd     : '../',
-				src     : ['assets/**'],
-				dest    : '../dist/'
 			}
 		},
 
@@ -107,14 +42,14 @@ module.exports = function(grunt){
 				},
 
 				files : {
-					'../css/estilos.min.css': 'sass/main.scss'
+					'../css/base.css': 'sass/main.scss'
 				}
 			}
 		},
 
 		autoprefixer : {
 			dest : {
-				src : '../css/estilos.min.css'
+				src : '../css/*.css'
 			}
 		},
 
@@ -145,17 +80,13 @@ module.exports = function(grunt){
 		},
 	});
 	
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-spritesmith');
-	grunt.loadNpmTasks('grunt-replace');
 	grunt.loadNpmTasks('grunt-babel');
 
 	grunt.registerTask('default', ['sass', 'autoprefixer', 'babel', 'concat']);
-	grunt.registerTask('build', ['default', 'uglify']);
+	grunt.registerTask('build', ['default']);
 };

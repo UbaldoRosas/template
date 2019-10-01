@@ -11,12 +11,18 @@ $base-font  : '';
 $title-font : '';
 
 // dimensiones
-$container-width : 1024px;
-$gutter-width    : 10px;
-
 $menu-height : 80px;
-$menu-gutter : 10px 15px;
 
 // z-index
 $zi-menu    : 100;
 $zi-loading : 110;
+
+$max-breakpoint: 1920;
+$tablet-breakpoint: 768;
+$mobile-breakpoint: 640;
+$small-mobile-breakpoint: 480;
+
+$wide-screen: "(min-width: #{$max-breakpoint}px)"; 
+$tablet-screen: "(max-width: #{$tablet-breakpoint}px)"; 
+$mobile-screen: "(max-width: #{$mobile-breakpoint}px)"; 
+$small-mobile-screen: "(max-width: #{$small-mobile-breakpoint}px)"; 
